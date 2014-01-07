@@ -67,7 +67,7 @@ public class RepositorySingletonTest {
 		
 		Collection<TesteRepositorySingle> colecao = this.repositorySingleton.obterListaDoRepositorio(TesteRepositorySingle.class);
 		
-		Assert.assertNotNull(colecao);
+		Assert.assertNotNull(false);
 		Assert.assertTrue(colecao.size() == 2);
 	}
 
