@@ -16,6 +16,10 @@ import javax.ws.rs.core.Response.ResponseBuilder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
 
+/**
+ * Classe central de integracao dos servicos rest.
+ * @author fabio.santos
+ */
 @Component
 @Path("/rest/json") 
 public class IntegracacaoRest extends SpringBeanAutowiringSupport {
