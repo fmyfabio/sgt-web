@@ -1,4 +1,4 @@
-package br.com.fmyfabio.sgt.service;
+package br.com.fmyfabio.sgt.test.service;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -15,6 +15,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import br.com.fmyfabio.sgt.enums.TipoAgendamento;
 import br.com.fmyfabio.sgt.exception.NegocioException;
 import br.com.fmyfabio.sgt.model.AgendamentoModel;
+import br.com.fmyfabio.sgt.service.AgendamentoService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "/applicationContext-test.xml" })

@@ -1,4 +1,4 @@
-package br.com.fmyfabio.sgt.service;
+package br.com.fmyfabio.sgt.test.service;
 
 import java.util.Collection;
 

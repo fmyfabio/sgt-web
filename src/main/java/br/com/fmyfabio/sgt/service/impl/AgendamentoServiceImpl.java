@@ -1,18 +1,33 @@
 package br.com.fmyfabio.sgt.service.impl;
 
 import java.util.Calendar;
+import java.util.Collection;
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.fmyfabio.sgt.enums.TipoAgendamento;
 import br.com.fmyfabio.sgt.exception.NegocioException;
 import br.com.fmyfabio.sgt.model.AgendamentoModel;
+import br.com.fmyfabio.sgt.repository.core.RepositorySingleton;
 import br.com.fmyfabio.sgt.service.AgendamentoService;
 
 @Service
 public class AgendamentoServiceImpl implements AgendamentoService {
 
+	@Autowired
+	private RepositorySingleton repositorySingleton;
+	
+	public void salvarAgendamento(AgendamentoModel agendamentoModel) throws NegocioException {
+		this.validarAgendamento(agendamentoModel);
+		this.repositorySingleton.salvarNoRepositorio(agendamentoModel);
+	}
+
+	public Collection<AgendamentoModel> listarAgendamentos() {
+		return this.repositorySingleton.obterListaDoRepositorio(AgendamentoModel.class);
+	}	
+	
 	public Double calcularTaxaAgendamento(AgendamentoModel agendamentoModel) {
 		Double taxa = null;
 		
@@ -35,6 +50,10 @@ public class AgendamentoServiceImpl implements AgendamentoService {
 		if (taxaReal.doubleValue() != agendamentoModel.getTaxa()) {
 			throw new NegocioException("Valor da taxa esta incorreto.");
 		}
+	}
+	
+	private void validarAgendamento(AgendamentoModel agendamentoModel) throws NegocioException {
+		this.validarTaxaAgendamento(agendamentoModel);
 	}
 	
 	private Double calcularDiferencaDeDias(Date dataMenor, Date dataMaior) {
