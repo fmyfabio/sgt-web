@@ -14,4 +14,7 @@
     <li>Padrao MVVM (Knockoutjs)</li>
     <li>Bootstrap</li>
     <li>Javascript, HTML5, CSS3</li>
+    <li>Maven</li>
+  </ul>
+</ol>  
 
