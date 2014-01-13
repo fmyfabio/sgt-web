@@ -13,4 +13,5 @@
     <li>TDD (JUnit)</li>
     <li>Padrao MVVM (Knockoutjs)</li>
     <li>Bootstrap</li>
+    <li>Javascript, HTML5, CSS3</li>
 
